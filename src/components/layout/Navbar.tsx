@@ -24,6 +24,24 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`)
+          }
+        })
+      },
+      { threshold: 0.4, rootMargin: "-80px 0px 0px 0px" }
+    )
+    navLinks.forEach(({ href }) => {
+      const el = document.querySelector(href)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [])
+
   const go = (href: string) => {
     setActive(href)
     setOpen(false)

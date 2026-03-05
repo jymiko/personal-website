@@ -1,8 +1,8 @@
 // src/lib/data.ts
 
 export const personalInfo = {
-  name: "Raka Pratama",
-  nameShort: "RP",
+  name: "Jatmiko",
+  nameShort: "Jatmiko.",
   tagline: "I design systems. I build them too.",
   taglineSub: "From wireframe to deployment — end to end.",
   bio: `Perjalanan saya di dunia teknologi dimulai bukan dari baris kode, tapi dari piksel. Sejak 2012, saya bekerja sebagai UI/UX Designer — membangun design system, meneliti pengguna, dan merancang antarmuka untuk berbagai produk digital di berbagai industri.
@@ -26,7 +26,7 @@ Kini sebagai Fullstack Developer, saya mengelola seluruh lifecycle produk: dari 
     projectsCompleted: 20,
     descriptor: "Design + Code",
   },
-  siteUrl: "https://rakapratama.dev",
+  siteUrl: "https://jatmiko.dev",
   twitterHandle: "@rakapratama",
 }
 
