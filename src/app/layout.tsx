@@ -5,6 +5,8 @@ import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider"
 import { ScrollProgress } from "@/components/animations/ScrollProgress"
 import { PageLoader } from "@/components/animations/PageLoader"
 import { JsonLd } from "@/components/JsonLd"
+import { ThemeProvider } from "@/components/layout/ThemeProvider"
+import { LanguageProvider } from "@/components/layout/LanguageProvider"
 import { personalInfo } from "@/lib/data"
 import "./globals.css"
 
@@ -91,13 +93,17 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <JsonLd />
-        <TooltipProvider delayDuration={200}>
-          <SmoothScrollProvider>
-            <ScrollProgress />
-            <PageLoader />
-            {children}
-          </SmoothScrollProvider>
-        </TooltipProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <TooltipProvider delayDuration={200}>
+              <SmoothScrollProvider>
+                <ScrollProgress />
+                <PageLoader />
+                {children}
+              </SmoothScrollProvider>
+            </TooltipProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

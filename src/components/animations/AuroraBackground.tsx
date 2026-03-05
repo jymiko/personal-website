@@ -3,8 +3,7 @@
 import { useEffect, useRef } from "react"
 import { useReducedMotion } from "framer-motion"
 
-// Particle network background — ported from Figma Make design reference
-// Colors: violet (#7c3aed) + cyan (#06b6d4) matching design system
+// Particle network background — emerald (#10b981) + cyan (#06b6d4)
 export function AuroraBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const shouldReduceMotion = useReducedMotion()
@@ -30,7 +29,7 @@ export function AuroraBackground() {
       radius: number; opacity: number; color: string
     }
 
-    const colors = ["#7c3aed", "#06b6d4", "#a78bfa", "#67e8f9"]
+    const colors = ["#10b981", "#06b6d4", "#6ee7b7", "#67e8f9"]
     const particles: Particle[] = []
 
     for (let i = 0; i < 60; i++) {
@@ -50,7 +49,6 @@ export function AuroraBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Update + draw particles
       particles.forEach((p) => {
         p.x += p.vx
         p.y += p.vy
@@ -64,7 +62,6 @@ export function AuroraBackground() {
         ctx.fill()
       })
 
-      // Draw connection lines between nearby particles
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
@@ -72,7 +69,7 @@ export function AuroraBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < 120) {
             ctx.beginPath()
-            ctx.strokeStyle = `rgba(124, 58, 237, ${0.15 * (1 - dist / 120)})`
+            ctx.strokeStyle = `rgba(16, 185, 129, ${0.15 * (1 - dist / 120)})`
             ctx.lineWidth = 0.5
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
@@ -98,7 +95,7 @@ export function AuroraBackground() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 25% 25%, rgba(124,58,237,0.15) 0%, transparent 70%), radial-gradient(ellipse 50% 45% at 75% 75%, rgba(6,182,212,0.12) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 25% 25%, rgba(16,185,129,0.12) 0%, transparent 70%), radial-gradient(ellipse 50% 45% at 75% 75%, rgba(6,182,212,0.10) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
