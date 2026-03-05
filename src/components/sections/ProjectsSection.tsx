@@ -10,9 +10,9 @@ type Category = "All" | "UI-UX" | "Frontend" | "Fullstack"
 const FILTERS: Category[] = ["All", "UI-UX", "Frontend", "Fullstack"]
 
 const categoryColor: Record<string, string> = {
-  "UI-UX":   "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20",
-  Frontend:  "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20",
-  Fullstack: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border-cyan-500/20",
+  "UI-UX":   "bg-black/50 backdrop-blur-sm text-pink-300 border-pink-400/40",
+  Frontend:  "bg-black/50 backdrop-blur-sm text-emerald-300 border-emerald-400/40",
+  Fullstack: "bg-black/50 backdrop-blur-sm text-cyan-300 border-cyan-400/40",
 }
 
 const gradientBg: Record<string, string> = {
