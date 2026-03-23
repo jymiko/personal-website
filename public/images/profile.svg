@@ -1,1 +1,270 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0F1A2E"/><stop offset="100%" style="stop-color:#162035"/></linearGradient><linearGradient id="ac" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4F8EF7"/><stop offset="100%" style="stop-color:#A78BFA"/></linearGradient></defs><rect width="500" height="500" fill="url(#bg)"/><circle cx="250" cy="200" r="90" fill="url(#ac)" opacity="0.15"/><circle cx="250" cy="200" r="60" fill="url(#ac)" opacity="0.2"/><text x="250" y="218" font-family="system-ui,sans-serif" font-size="52" font-weight="700" text-anchor="middle" fill="#F0F6FF">RP</text><text x="250" y="360" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#4A6080">Ganti dengan foto asli</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <clipPath id="cc">
+      <circle cx="200" cy="200" r="195"/>
+    </clipPath>
+
+    <!-- 3D sphere face lighting: light from top-left -->
+    <radialGradient id="faceGrad" cx="36%" cy="26%" r="68%">
+      <stop offset="0%"   stop-color="#f5c49a"/>
+      <stop offset="28%"  stop-color="#d98858"/>
+      <stop offset="62%"  stop-color="#bb6c3a"/>
+      <stop offset="100%" stop-color="#7a3a18"/>
+    </radialGradient>
+
+    <!-- Neck -->
+    <radialGradient id="neckGrad" cx="42%" cy="18%" r="75%">
+      <stop offset="0%"   stop-color="#d98858"/>
+      <stop offset="100%" stop-color="#8a4422"/>
+    </radialGradient>
+
+    <!-- Ear -->
+    <radialGradient id="earGrad" cx="62%" cy="28%" r="70%">
+      <stop offset="0%"   stop-color="#d98858"/>
+      <stop offset="100%" stop-color="#8a3e1c"/>
+    </radialGradient>
+
+    <!-- Hair: dark with slight chestnut highlight from light -->
+    <radialGradient id="hairGrad" cx="38%" cy="22%" r="62%">
+      <stop offset="0%"   stop-color="#3c2818"/>
+      <stop offset="45%"  stop-color="#1c1008"/>
+      <stop offset="100%" stop-color="#080604"/>
+    </radialGradient>
+
+    <!-- Hair specular -->
+    <radialGradient id="hairShine" cx="40%" cy="28%" r="52%">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0.22)"/>
+      <stop offset="60%"  stop-color="rgba(255,255,255,0.04)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+
+    <!-- Iris -->
+    <radialGradient id="irisGrad" cx="38%" cy="32%" r="68%">
+      <stop offset="0%"   stop-color="#7a4424"/>
+      <stop offset="38%"  stop-color="#3e1e0c"/>
+      <stop offset="100%" stop-color="#100600"/>
+    </radialGradient>
+
+    <!-- Upper lip -->
+    <linearGradient id="upperLip" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#c87060"/>
+      <stop offset="100%" stop-color="#984040"/>
+    </linearGradient>
+
+    <!-- Lower lip (slightly lighter, more specular) -->
+    <linearGradient id="lowerLip" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#c47060"/>
+      <stop offset="60%"  stop-color="#a85848"/>
+      <stop offset="100%" stop-color="#7a3830"/>
+    </linearGradient>
+
+    <!-- Shirt -->
+    <linearGradient id="shirtGrad" x1="28%" y1="0%" x2="72%" y2="100%">
+      <stop offset="0%"   stop-color="#2a2a2a"/>
+      <stop offset="38%"  stop-color="#181818"/>
+      <stop offset="100%" stop-color="#090909"/>
+    </linearGradient>
+
+    <!-- Shirt light sheen -->
+    <radialGradient id="shirtSheen" cx="32%" cy="15%" r="55%">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0.10)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+
+    <!-- Dark background with subtle depth -->
+    <radialGradient id="bgGrad" cx="50%" cy="42%" r="62%">
+      <stop offset="0%"   stop-color="#18202e"/>
+      <stop offset="100%" stop-color="#0b0e14"/>
+    </radialGradient>
+
+    <!-- Blur for subsurface scattering effect -->
+    <filter id="sss" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <!-- Soft blur for small AO shadows -->
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)"/>
+
+  <g clip-path="url(#cc)">
+
+    <!-- ═══ SHIRT ═══ -->
+    <path d="M15 445 Q48 348 116 316 L160 296 Q172 307 200 311 Q228 307 240 296 L284 316 Q352 348 385 445Z"
+          fill="url(#shirtGrad)"/>
+    <path d="M15 445 Q48 348 116 316 L160 296 Q172 307 200 311 Q228 307 240 296 L284 316 Q352 348 385 445Z"
+          fill="url(#shirtSheen)"/>
+    <!-- Collar left -->
+    <path d="M200 311 L158 294 L138 308 L182 342Z" fill="#252525"/>
+    <!-- Collar right -->
+    <path d="M200 311 L242 294 L262 308 L218 342Z" fill="#202020"/>
+    <!-- Collar shadow depth -->
+    <path d="M200 314 L174 328" stroke="#0a0a0a" stroke-width="1.8" opacity="0.55" stroke-linecap="round"/>
+    <path d="M200 314 L226 328" stroke="#0a0a0a" stroke-width="1.8" opacity="0.55" stroke-linecap="round"/>
+    <!-- Placket + buttons -->
+    <line x1="200" y1="318" x2="200" y2="420" stroke="#101010" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="200" cy="350" r="3.2" fill="#181818" stroke="#333" stroke-width="1.2"/>
+    <circle cx="200" cy="376" r="3.2" fill="#181818" stroke="#333" stroke-width="1.2"/>
+
+    <!-- ═══ NECK ═══ -->
+    <path d="M180 265 Q178 294 183 310 Q191 323 200 325 Q209 323 217 310 Q222 294 220 265Z"
+          fill="url(#neckGrad)"/>
+    <!-- Neck edge shadows -->
+    <path d="M180 270 Q178 294 183 310" fill="none" stroke="#7a3a16" stroke-width="3" opacity="0.3" stroke-linecap="round"/>
+    <path d="M220 270 Q222 294 217 310" fill="none" stroke="#7a3a16" stroke-width="3" opacity="0.3" stroke-linecap="round"/>
+
+    <!-- ═══ HEAD — subsurface scatter glow ═══ -->
+    <path d="M124 193 Q122 140 146 112 Q166 88 200 84 Q234 88 254 112 Q278 140 276 193 Q276 241 261 261 Q244 281 226 288 Q214 293 200 294 Q186 293 174 288 Q156 281 139 261 Q124 241 124 193Z"
+          fill="#c07040" filter="url(#sss)" opacity="0.38"/>
+
+    <!-- ═══ MAIN FACE ═══ -->
+    <path d="M124 193 Q122 140 146 112 Q166 88 200 84 Q234 88 254 112 Q278 140 276 193 Q276 241 261 261 Q244 281 226 288 Q214 293 200 294 Q186 293 174 288 Q156 281 139 261 Q124 241 124 193Z"
+          fill="url(#faceGrad)"/>
+
+    <!-- Face specular: forehead highlight (primary) -->
+    <ellipse cx="174" cy="144" rx="32" ry="22" fill="white" opacity="0.09" transform="rotate(-18,174,144)"/>
+    <!-- Secondary specular: left cheekbone -->
+    <ellipse cx="150" cy="202" rx="16" ry="10" fill="white" opacity="0.05" transform="rotate(-12,150,202)"/>
+
+    <!-- Face AO: jaw underside -->
+    <path d="M158 270 Q178 288 200 292 Q222 288 242 270"
+          fill="none" stroke="#5a2808" stroke-width="5" opacity="0.13" stroke-linecap="round"/>
+    <!-- Face AO: nasolabial -->
+    <path d="M175 226 Q173 240 178 251" stroke="#8a4018" stroke-width="1.5" fill="none" opacity="0.18" stroke-linecap="round"/>
+    <path d="M225 226 Q227 240 222 251" stroke="#8a4018" stroke-width="1.5" fill="none" opacity="0.18" stroke-linecap="round"/>
+
+    <!-- ═══ EARS ═══ -->
+    <ellipse cx="123" cy="196" rx="12.5" ry="17" fill="url(#earGrad)"/>
+    <path d="M126 187 Q130 196 126 207" fill="none" stroke="#7a3818" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+    <!-- Ear AO (shadow where ear meets head) -->
+    <ellipse cx="129" cy="196" rx="5" ry="14" fill="#6a3010" opacity="0.14"/>
+
+    <ellipse cx="277" cy="196" rx="12.5" ry="17" fill="url(#earGrad)"/>
+    <path d="M274 187 Q270 196 274 207" fill="none" stroke="#7a3818" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+    <ellipse cx="271" cy="196" rx="5" ry="14" fill="#6a3010" opacity="0.14"/>
+
+    <!-- ═══ HAIR ═══ -->
+    <path d="M124 193 Q122 136 152 107 Q172 83 200 79 Q228 83 248 107 Q278 136 276 193 Q266 143 252 120 Q234 97 200 94 Q166 97 148 120 Q134 143 124 193Z"
+          fill="url(#hairGrad)"/>
+    <!-- Hair volume top cap -->
+    <path d="M152 107 Q173 79 200 75 Q227 79 248 107 Q232 86 214 81 Q207 79 200 78 Q193 79 186 81 Q168 86 152 107Z"
+          fill="#100b06"/>
+    <!-- Hair side fills for depth -->
+    <path d="M124 193 Q122 158 128 130 Q136 108 152 104 Q134 120 128 150 Q123 172 124 193Z"
+          fill="#0e0a06"/>
+    <path d="M276 193 Q278 158 272 130 Q264 108 248 104 Q266 120 272 150 Q277 172 276 193Z"
+          fill="#0e0a06"/>
+    <!-- Hair specular shine streak -->
+    <ellipse cx="190" cy="93" rx="36" ry="14" fill="url(#hairShine)" transform="rotate(-10,190,93)"/>
+
+    <!-- ═══ EYEBROWS ═══ -->
+    <!-- Brow socket AO -->
+    <path d="M143 167 Q162 159 185 163" stroke="#4a2008" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.18"/>
+    <path d="M215 163 Q238 159 257 167" stroke="#4a2008" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.18"/>
+    <!-- Main brow shape -->
+    <path d="M146 165 Q163 157 184 161" stroke="#120a04" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M216 161 Q237 157 254 165" stroke="#120a04" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Brow top edge highlight (3D ridge) -->
+    <path d="M148 163 Q163 156 182 159" stroke="rgba(255,255,255,0.07)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M218 159 Q237 156 252 163" stroke="rgba(255,255,255,0.07)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- ═══ EYES ═══ -->
+    <!-- Eye socket depth (AO) -->
+    <ellipse cx="164" cy="183" rx="23" ry="14" fill="#5a2408" opacity="0.14" filter="url(#soft)"/>
+    <ellipse cx="236" cy="183" rx="23" ry="14" fill="#5a2408" opacity="0.14" filter="url(#soft)"/>
+
+    <!-- Left eye -->
+    <path d="M143 182 Q164 173 185 182 Q164 191 143 182Z" fill="#f2ece6"/>
+    <path d="M143 182 Q164 173 185 182" fill="none" stroke="#c4a896" stroke-width="0.8" opacity="0.45"/>
+    <!-- Iris -->
+    <circle cx="164" cy="182" r="10" fill="url(#irisGrad)"/>
+    <!-- Pupil -->
+    <circle cx="164" cy="182" r="5.8" fill="#060202"/>
+    <!-- Specular primary -->
+    <circle cx="167.5" cy="179" r="2.4" fill="white" opacity="0.94"/>
+    <!-- Specular secondary (subtle) -->
+    <circle cx="160.5" cy="185" r="1.1" fill="white" opacity="0.32"/>
+    <!-- Upper lid -->
+    <path d="M143 182 Q164 172 185 182" fill="none" stroke="#1a0c06" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- Lower lid -->
+    <path d="M145 184 Q164 190 183 184" fill="none" stroke="#3a1a08" stroke-width="0.8" opacity="0.32" stroke-linecap="round"/>
+    <!-- Inner corner AO -->
+    <circle cx="143" cy="182" r="2.5" fill="#5a2408" opacity="0.22"/>
+
+    <!-- Right eye -->
+    <path d="M215 182 Q236 173 257 182 Q236 191 215 182Z" fill="#f2ece6"/>
+    <path d="M215 182 Q236 173 257 182" fill="none" stroke="#c4a896" stroke-width="0.8" opacity="0.45"/>
+    <circle cx="236" cy="182" r="10" fill="url(#irisGrad)"/>
+    <circle cx="236" cy="182" r="5.8" fill="#060202"/>
+    <circle cx="239.5" cy="179" r="2.4" fill="white" opacity="0.94"/>
+    <circle cx="232.5" cy="185" r="1.1" fill="white" opacity="0.32"/>
+    <path d="M215 182 Q236 172 257 182" fill="none" stroke="#1a0c06" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M217 184 Q236 190 255 184" fill="none" stroke="#3a1a08" stroke-width="0.8" opacity="0.32" stroke-linecap="round"/>
+    <circle cx="257" cy="182" r="2.5" fill="#5a2408" opacity="0.22"/>
+
+    <!-- ═══ NOSE ═══ -->
+    <!-- Bridge shadow lines -->
+    <path d="M196 196 Q191 214 191 230" stroke="#9a5228" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.48"/>
+    <path d="M204 196 Q209 214 209 230" stroke="#9a5228" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.48"/>
+    <!-- Nose tip AO shadow -->
+    <ellipse cx="200" cy="232" rx="16" ry="9" fill="#7a3414" opacity="0.1" filter="url(#soft)"/>
+    <!-- Nose tip specular -->
+    <ellipse cx="198" cy="229" rx="6" ry="4.5" fill="white" opacity="0.10"/>
+    <!-- Nostril wings -->
+    <path d="M186 234 Q196 240 200 238 Q204 240 214 234"
+          fill="none" stroke="#7a3214" stroke-width="2.4" stroke-linecap="round" opacity="0.72"/>
+    <!-- Nostril holes (AO depth) -->
+    <ellipse cx="190" cy="235" rx="5.5" ry="3.8" fill="#501c08" opacity="0.52" transform="rotate(-12,190,235)"/>
+    <ellipse cx="210" cy="235" rx="5.5" ry="3.8" fill="#501c08" opacity="0.52" transform="rotate(12,210,235)"/>
+
+    <!-- ═══ MOUTH ═══ -->
+    <!-- Philtrum (subtle groove) -->
+    <path d="M200 241 L200 250" stroke="#9a4e28" stroke-width="1.5" opacity="0.28" stroke-linecap="round"/>
+    <!-- Cupid's bow hint -->
+    <path d="M184 252 Q192 246 200 249 Q208 246 216 252"
+          fill="none" stroke="#9e4232" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+    <!-- Upper lip fill -->
+    <path d="M184 252 Q192 246 200 249 Q208 246 216 252 Q212 257 200 259 Q188 257 184 252Z"
+          fill="url(#upperLip)" opacity="0.88"/>
+    <!-- Lip slit -->
+    <path d="M184 255 Q200 263 216 255"
+          stroke="#742820" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.78"/>
+    <!-- Lower lip fill -->
+    <path d="M184 255 Q200 265 216 255 Q210 268 200 270 Q190 268 184 255Z"
+          fill="url(#lowerLip)" opacity="0.72"/>
+    <!-- Lower lip specular -->
+    <ellipse cx="200" cy="262" rx="11" ry="4" fill="white" opacity="0.08"/>
+    <!-- Corner AO -->
+    <circle cx="184" cy="255" r="3" fill="#6a2418" opacity="0.22"/>
+    <circle cx="216" cy="255" r="3" fill="#6a2418" opacity="0.22"/>
+
+    <!-- ═══ GOATEE / FACIAL HAIR ═══ -->
+    <!-- Subtle mustache shadow -->
+    <path d="M186 247 Q200 250 214 247"
+          stroke="#1e0e06" stroke-width="2.2" fill="none" opacity="0.22" stroke-linecap="round"/>
+    <!-- Soul patch -->
+    <ellipse cx="200" cy="268" rx="8" ry="5.5" fill="#160a04" opacity="0.84"/>
+    <!-- Soul patch highlight edge -->
+    <ellipse cx="199" cy="266" rx="3.5" ry="2" fill="#2c1208" opacity="0.45"/>
+    <!-- Chin beard shape -->
+    <path d="M188 277 Q193 288 200 291 Q207 288 212 277 Q207 288 200 292 Q193 288 188 277Z"
+          fill="#140904" opacity="0.80"/>
+    <!-- Beard soft edge -->
+    <path d="M191 280 Q196 289 200 290 Q204 289 209 280"
+          fill="none" stroke="#281208" stroke-width="2" opacity="0.28" stroke-linecap="round"/>
+
+    <!-- ═══ SUBTLE FACE DETAILS ═══ -->
+    <!-- Cheek warmth -->
+    <ellipse cx="148" cy="214" rx="22" ry="15" fill="#d85830" opacity="0.055"/>
+    <ellipse cx="252" cy="214" rx="22" ry="15" fill="#d85830" opacity="0.055"/>
+
+  </g>
+
+  <!-- Brand ring -->
+  <circle cx="200" cy="200" r="195" fill="none" stroke="#10b981" stroke-width="4" opacity="0.72"/>
+  <circle cx="200" cy="200" r="191" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.30"/>
+</svg>
